@@ -65,16 +65,21 @@ namespace Roldaice.Cryptograph.Enigma
             return new Rotor("V", 'Z', "VZBRGITYUPSDNHLXAWMJQOFECK", startingLetter);
         }
 
-        public static List<Rotor> GetAll()
+        public static List<Rotor> GetAll(char startingLetter = 'A')
         {
             return new List<Rotor>
             {
-                Rotor.I('A'),
-                Rotor.II('A'),
-                Rotor.III('A'),
-                Rotor.IV('A'),
-                Rotor.V('A'),
+                Rotor.I(startingLetter),
+                Rotor.II(startingLetter),
+                Rotor.III(startingLetter),
+                Rotor.IV(startingLetter),
+                Rotor.V(startingLetter),
             };
+        }
+
+        public static Rotor GetByCode(string code, char startingLetter)
+        {
+            return GetAll(startingLetter).FirstOrDefault(x => x.Code == code);
         }
         #endregion
 

@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Bundles/Mordernizr")
+    @Styles.Render("~/Bundles/Dependency/Css")
+    @Styles.Render("~/Bundles/Site/Css")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,7 +22,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Accueil", MVC.Home.Index())</li>
-                    <li>@Html.ActionLink("Cryptographe", MVC.Cryptograph.Index())</li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cryptographe <i class="caret"></i></a>
+                        <ul class="dropdown-menu last-level">
+                            <li>@Html.ActionLink("Enigma", MVC.Cryptograph.Enigma())</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -34,8 +40,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Bundles/Dependency")
+    @Scripts.Render("~/Bundles/Site")
     @RenderSection("scripts", required: false)
 </body>
 </html>

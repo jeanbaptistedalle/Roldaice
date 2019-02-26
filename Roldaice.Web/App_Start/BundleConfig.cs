@@ -8,23 +8,44 @@ namespace Roldaice.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.IgnoreList.Clear();
+            bundles.Add(new ScriptBundle("~/Bundles/Mordernizr")
+                .Include("~/Scripts/Dependency/mordernizr-2.8.3.js")
+            );
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/Bundles/Dependency")
+                .Include("~/Scripts/Dependency/bootstrap.min.js")
+                .Include("~/Scripts/Dependency/moment-with-locales.min.js")
+                .Include("~/Scripts/Dependency/jquery-3.3.1.min.js")
+                .Include("~/Scripts/Dependency/jquery.validate.min.js")
+                .Include("~/Scripts/Dependency/jquery.validate.unobstrusive.min.js")
+                .Include("~/Scripts/Dependency/bootstrap-confirmation.min.js")
+                .Include("~/Scripts/Dependency/bootstrap-datetimepicker.min.js")
+                .Include("~/Scripts/Dependency/bootstrap-select.min.js")
+                .Include("~/Scripts/Dependency/bootstrap-slider.min.js")
+                .Include("~/Scripts/Dependency/bootstrap-toggle.min.js")
+                .Include("~/Scripts/Dependency/datatables.min.js")
+                .Include("~/Scripts/Dependency/toastr.min.js")
+            );
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/Bundles/Site")
+                .Include("~/Scripts/Site.js")
+            );
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Bundles/Dependency/Css")
+                .Include("~/Content/Dependency/bootstrap.min.css")
+                .Include("~/Content/Dependency/bootstrap-theme.min.css")
+                .Include("~/Content/Dependency/bootstrap-datetimepicker.min.css")
+                .Include("~/Content/Dependency/bootstrap-select.min.css")
+                .Include("~/Content/Dependency/bootstrap-slider.min.css")
+                .Include("~/Content/Dependency/bootstrap-toggle.min.css")
+                .Include("~/Content/Dependency/datatables.min.css")
+                .Include("~/Content/Dependency/font-awesome.min.css")
+            );
+            
+            bundles.Add(new StyleBundle("~/Bundles/Site/Css")
+                .Include("~/Content/Site.css")
+            );
         }
     }
 }

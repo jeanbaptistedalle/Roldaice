@@ -1,9 +1,7 @@
 using AutoMapper;
-using log4net.Core;
-using log4net.Repository.Hierarchy;
+using Roldaice.Helpers.Logger;
 using Roldaice.Web.App_Start;
 using System;
-
 using Unity;
 using Unity.Lifetime;
 
@@ -47,7 +45,7 @@ namespace Roldaice.Web
 
             container
                 .RegisterInstance(AutoMapperConfig.RegisterAutoMapper())
-                //.RegisterType<ILogger, Logger>(new ContainerControlledLifetimeManager())
+                .RegisterType<ILogger, Logger>(new ContainerControlledLifetimeManager())
             ;
         }
     }

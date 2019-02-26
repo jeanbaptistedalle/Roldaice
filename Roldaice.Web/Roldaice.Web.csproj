@@ -164,6 +164,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MvcHelper.cs" />
+    <Compile Include="Helpers\SelectListItemHelper.cs" />
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -179,27 +181,44 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dependency\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Dependency\bootstrap-select.min.css" />
+    <Content Include="Content\Dependency\bootstrap-slider.min.css" />
+    <Content Include="Content\Dependency\bootstrap-theme.min.css" />
+    <Content Include="Content\Dependency\bootstrap-toggle.min.css" />
+    <Content Include="Content\Dependency\bootstrap.min.css" />
+    <Content Include="Content\Dependency\datatables.min.css" />
+    <Content Include="Content\Dependency\font-awesome.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Dependency\bootstrap-confirmation.min.js" />
+    <Content Include="Scripts\Dependency\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\Dependency\bootstrap-select.min.js" />
+    <Content Include="Scripts\Dependency\bootstrap-slider.min.js" />
+    <Content Include="Scripts\Dependency\bootstrap-toggle.min.js" />
+    <Content Include="Scripts\Dependency\bootstrap.min.js" />
+    <Content Include="Configuration\appSetting.config" />
+    <Content Include="Configuration\log4net.config" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Dependency\datatables.min.js" />
+    <Content Include="Scripts\Dependency\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\Dependency\jquery.validate.min.js" />
+    <Content Include="Scripts\Dependency\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Dependency\modernizr-2.8.3.js" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Scripts\Dependency\moment-with-locales.min.js" />
+    <Content Include="Scripts\Dependency\toastr.min.js" />
+    <Content Include="Scripts\Site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -219,7 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Models\Home\" />
   </ItemGroup>
   <ItemGroup>
@@ -227,10 +245,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
