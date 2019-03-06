@@ -1,82 +1,109 @@
 ﻿@model Roldaice.Web.Models.Cryptograph.EnigmaModel
 @{
     ViewBag.Title = "Enigma";
+    Layout = MVC.Shared.Views.Layout._PanelLayout;
 }
 
-<h2>Enigma</h2>
+@section title{
+    <i class="fa fa-cogs"></i> Configuration
+}
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <i class="fa fa-cogs"></i> Configuration
+@using (Html.BeginForm(MVC.Cryptograph.Enigma(), FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary()
+
+    <div class="form-group hidden-xs hidden-sm">
+        <div class="col-md-2 text-center">
+
+        </div>
+        <div class="col-md-5 text-center">
+            <span class="bold">Rotor selectionné</span>
+        </div>
+        <div class="col-md-5 text-center">
+            <span class="bold">Lettre de départ</span>
+        </div>
     </div>
-    <div class="panel-body">
-        @using (Html.BeginForm(MVC.Cryptograph.Enigma(), FormMethod.Post, new { @class = "form-horizontal" }))
-        {
-            @Html.ValidationSummary()
-
-            <div class="col-md-12 form-group">
-                <div class="col-md-4 text-center">
-
-                </div>
-                <div class="col-md-4 text-center">
-                    <span class="bold">Rotor selectionné</span>
-                </div>
-                <div class="col-md-4 text-center">
-                    <span class="bold">Lettre de départ</span>
-                </div>
-            </div>
-            <div class="col-md-12 form-group">
-                @Html.LabelFor(m => m.SelectedRotor1, new { @class = "control-label col-md-4 text-left" })
-                <div class="col-md-4">
-                    @Html.DropDownListFor(m => m.SelectedRotor1, Model.AvailableRotors, new { @class = "form-control select-picker" })
-                </div>
-                <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.StartingLetter1, new { maxlength = "1", @class = "form-control" })
-                </div>
-            </div>
-
-            <div class="col-md-12 form-group">
-                @Html.LabelFor(m => m.SelectedRotor2, new { @class = "control-label col-md-4 text-left" })
-                <div class="col-md-4">
-                    @Html.DropDownListFor(m => m.SelectedRotor2, Model.AvailableRotors, new { @class = "form-control select-picker" })
-                </div>
-                <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.StartingLetter2, new { maxlength = "1", @class = "form-control" })
-                </div>
-            </div>
-
-            <div class="col-md-12 form-group">
-                @Html.LabelFor(m => m.SelectedRotor3, new { @class = "control-label col-md-4 text-left" })
-                <div class="col-md-4">
-                    @Html.DropDownListFor(m => m.SelectedRotor3, Model.AvailableRotors, new { @class = "form-control select-picker" })
-                </div>
-                <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.StartingLetter3, new { maxlength = "1", @class = "form-control" })
-                </div>
-            </div>
-
-            <div class="col-md-12 form-group">
-                @Html.LabelFor(m => m.WithRotation, new { @class = "control-label col-md-4 text-left" })
-                <div class="col-md-8">
-                    @Html.CheckBoxFor(m => m.WithRotation, new { @class = "checkbox datatoggle" })
-                </div>
-            </div>
-
-            <div class="col-md-12 form-group">
-                @Html.LabelFor(m => m.Text, new { @class = "control-label col-md-4 text-left" })
-                <div class="col-md-8">
-                    @Html.TextAreaFor(m => m.Text, new { @class = "form-control" })
-                </div>
-            </div>
-
-            <div class="col-md-12 form-group">
-                @Html.LabelFor(m => m.Result, new { @class = "control-label col-md-4 text-left" })
-                <div class="col-md-8">
-                    @Html.TextAreaFor(m => m.Result, Html.Attributes(new { @class = "form-control" }, readOnly: true))
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-check"></i> Valider</button>
-        }
+    <div class="form-group">
+        <div class="col-xs-12 col-md-2 text-right-md">
+            @Html.LabelFor(m => m.SelectedRotor1, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12 col-md-5">
+            @Html.DropDownListFor(m => m.SelectedRotor1, Model.AvailableRotors, new { @class = "form-control select-picker no-live-search" })
+        </div>
+        <div class="col-xs-12 hidden-md hidden-lg">
+            @Html.LabelFor(m => m.StartingLetter1, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12 col-md-5">
+            @Html.TextBoxFor(m => m.StartingLetter1, new { maxlength = "1", @class = "form-control" })
+        </div>
     </div>
-</div>
+
+    <div class="form-group">
+        <div class="col-xs-12 col-md-2 text-right-md">
+            @Html.LabelFor(m => m.SelectedRotor2, new { @class = "control-label" })
+        </div>
+        <div class="col-md-5">
+            @Html.DropDownListFor(m => m.SelectedRotor2, Model.AvailableRotors, new { @class = "form-control select-picker no-live-search" })
+        </div>
+        <div class="col-xs-12 hidden-md hidden-lg">
+            @Html.LabelFor(m => m.StartingLetter2, new { @class = "control-label" })
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(m => m.StartingLetter2, new { maxlength = "1", @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12 col-md-2 text-right-md">
+            @Html.LabelFor(m => m.SelectedRotor3, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12 col-md-5">
+            @Html.DropDownListFor(m => m.SelectedRotor3, Model.AvailableRotors, new { @class = "form-control select-picker no-live-search" })
+        </div>
+        <div class="col-xs-12 hidden-md hidden-lg">
+            @Html.LabelFor(m => m.StartingLetter3, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12 col-md-5">
+            @Html.TextBoxFor(m => m.StartingLetter3, new { maxlength = "1", @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12 col-md-2 text-right-md">
+            @Html.LabelFor(m => m.MoveRotor, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12 col-md-10">
+            @Html.CheckBoxFor(m => m.MoveRotor, new { @class = "checkbox datatoggle" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12 col-md-2 text-right-md">
+            @Html.LabelFor(m => m.Text, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12 col-md-10">
+            @Html.TextAreaFor(m => m.Text, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Valider</button>
+        </div>
+    </div>
+
+    if (!String.IsNullOrEmpty(Model.Result))
+    {
+        <div class="form-group">
+            <div class="col-xs-12 col-md-4 text-right-md">
+                @Html.LabelFor(m => m.Result, new { @class = "control-label" })
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <div class="alert alert-info">
+                    @Html.DisplayFor(m => m.Result, Html.Attributes(new { @class = "form-control" }, readOnly: true))
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,70 @@
+﻿@model Roldaice.Web.Models.RollDice.RollADiceModel
+@{
+    ViewBag.Title = "Simulateur de jet de dé";
+    Layout = MVC.Shared.Views.Layout._PanelLayout;
+}
+
+@section title{
+    <i class="fa fa-cogs"></i> Configuration
+}
+
+@using (Html.BeginForm(MVC.RollDice.RollADice(), FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        <div class="col-xs-12 col-sm-6 col-md-4 no-padding">
+            <div class="col-xs-12">
+                @Html.LabelFor(m => m.DiceCode, new { @class = "control-label text-left" })
+            </div>
+            <div class="col-xs-12">
+                @Html.DropDownListFor(m => m.DiceCode, Model.AvailableDices, new { @class = "form-control select-picker no-live-search" })
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
+            <div class="col-xs-12">
+                @Html.LabelFor(m => m.TwoDice, new { @class = "control-label text-left" })
+            </div>
+            <div class="col-xs-12">
+                @Html.CheckBoxFor(m => m.TwoDice, new { @class = "checkbox datatoggle" })
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
+            <div class="col-xs-12">
+                @Html.LabelFor(m => m.Plus2, new { @class = "control-label text-left" })
+            </div>
+            <div class="col-xs-12">
+                @Html.CheckBoxFor(m => m.Plus2, new { @class = "checkbox datatoggle" })
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
+            <div class="col-xs-12">
+                @Html.LabelFor(m => m.Average, new { @class = "control-label text-left" })
+            </div>
+            <div class="col-xs-12">
+                @Html.CheckBoxFor(m => m.Average, new { @class = "checkbox datatoggle" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Lancer !</button>
+        </div>
+    </div>
+
+    if (Model.Result.HasValue)
+    {
+        <div class="form-group">
+            <div class="col-xs-12">
+                @Html.LabelFor(m => m.Result, new { @class = "control-label text-left" })
+            </div>
+            <div class="col-xs-12">
+                <div class="alert alert-info">
+                    @Html.DisplayFor(m => m.Result, Html.Attributes(new { @class = "form-control" }, readOnly: true))
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Roldaice.Common.DTO.Base;
 using Roldaice.Cryptograph.Enigma;
+using Roldaice.RollDice.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Roldaice.Web.App_Start.AutoMapperProfiles
             ;
 
             CreateMap<Rotor, SelectListItem>()
+                .ForMember(target => target.Value, m => m.ResolveUsing(source => source.Code))
+                .ForMember(target => target.Text, m => m.ResolveUsing(source => source.Code))
+            ;
+
+            CreateMap<Dice, SelectListItem>()
                 .ForMember(target => target.Value, m => m.ResolveUsing(source => source.Code))
                 .ForMember(target => target.Text, m => m.ResolveUsing(source => source.Code))
             ;

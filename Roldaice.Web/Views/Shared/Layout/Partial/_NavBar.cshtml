@@ -1,0 +1,28 @@
+﻿<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <span class="navbar-brand visible-xs">
+        @Html.ActionLink("Roldaice", MVC.Home.Index(), new { @class = "navbar-brand" })
+        <span style="font-size:12px">v@(AppSettingsHelper.GetBuildVersion())</span>
+    </span>
+</div>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Accueil", MVC.Home.Index())</li>
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cryptographe <i class="caret"></i></a>
+            <ul class="dropdown-menu last-level">
+                <li>@Html.ActionLink("Enigma", MVC.Cryptograph.Enigma())</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RollDice <i class="caret"></i></a>
+            <ul class="dropdown-menu last-level">
+                <li>@Html.ActionLink("Jet de dés", MVC.RollDice.RollADice())</li>
+            </ul>
+        </li>
+    </ul>
+</div>

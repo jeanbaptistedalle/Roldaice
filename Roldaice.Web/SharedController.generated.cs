@@ -39,8 +39,10 @@ namespace T4MVC
             public class _ViewNamesClass
             {
                 public readonly string Error = "Error";
+                public readonly string Error404 = "Error404";
             }
             public readonly string Error = "~/Views/Shared/Error.cshtml";
+            public readonly string Error404 = "~/Views/Shared/Error404.cshtml";
             static readonly _LayoutClass s_Layout = new _LayoutClass();
             public _LayoutClass Layout { get { return s_Layout; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -51,12 +53,57 @@ namespace T4MVC
                 public class _ViewNamesClass
                 {
                     public readonly string _Layout = "_Layout";
-                    public readonly string _PanelCollapseLayout = "_PanelCollapseLayout";
+                    public readonly string _PanelCollapsePanel = "_PanelCollapsePanel";
                     public readonly string _PanelLayout = "_PanelLayout";
                 }
                 public readonly string _Layout = "~/Views/Shared/Layout/_Layout.cshtml";
-                public readonly string _PanelCollapseLayout = "~/Views/Shared/Layout/_PanelCollapseLayout.cshtml";
+                public readonly string _PanelCollapsePanel = "~/Views/Shared/Layout/_PanelCollapsePanel.cshtml";
                 public readonly string _PanelLayout = "~/Views/Shared/Layout/_PanelLayout.cshtml";
+                static readonly _PartialClass s_Partial = new _PartialClass();
+                public _PartialClass Partial { get { return s_Partial; } }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public partial class _PartialClass
+                {
+                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                    public class _ViewNamesClass
+                    {
+                        public readonly string _JavascriptConstants = "_JavascriptConstants";
+                        public readonly string _NavBar = "_NavBar";
+                        public readonly string _Url = "_Url";
+                    }
+                    public readonly string _JavascriptConstants = "~/Views/Shared/Layout/Partial/_JavascriptConstants.cshtml";
+                    public readonly string _NavBar = "~/Views/Shared/Layout/Partial/_NavBar.cshtml";
+                    public readonly string _Url = "~/Views/Shared/Layout/Partial/_Url.cshtml";
+                }
+            }
+            static readonly _PartialClass s_Partial = new _PartialClass();
+            public _PartialClass Partial { get { return s_Partial; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string _EmptyView = "_EmptyView";
+                }
+                public readonly string _EmptyView = "~/Views/Shared/Partial/_EmptyView.cshtml";
+            }
+            static readonly _PartialLayoutClass s_PartialLayout = new _PartialLayoutClass();
+            public _PartialLayoutClass PartialLayout { get { return s_PartialLayout; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialLayoutClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string _PanelCollapsePanel = "_PanelCollapsePanel";
+                    public readonly string _PanelLayout = "_PanelLayout";
+                }
+                public readonly string _PanelCollapsePanel = "~/Views/Shared/PartialLayout/_PanelCollapsePanel.cshtml";
+                public readonly string _PanelLayout = "~/Views/Shared/PartialLayout/_PanelLayout.cshtml";
             }
         }
     }

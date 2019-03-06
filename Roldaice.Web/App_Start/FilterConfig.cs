@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Roldaice.Web.Attributes;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Roldaice.Web
@@ -7,7 +8,7 @@ namespace Roldaice.Web
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new LogHandleErrorAttribute(), 10);
         }
     }
 }

@@ -1,8 +1,22 @@
-﻿<div class="panel panel-man">
-    <div class="panel-heading">
-        @RenderSection("title", required: false)
-    </div>
-    <div class="panel-body">
-        @RenderBody()
+﻿@{
+    Layout = MVC.Shared.Views.Layout._Layout;
+}
+
+@section styles{
+    @RenderSection("styles", required: false)
+}
+
+@section scripts{
+    @RenderSection("scripts", required: false)
+}
+
+<div class="row margin-top">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            @RenderSection("title", required: false)
+        </div>
+        <div class="panel-body">
+            @RenderBody()
+        </div>
     </div>
 </div>

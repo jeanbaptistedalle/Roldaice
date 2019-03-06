@@ -42,6 +42,21 @@ namespace Roldaice.Cryptograph.Enigma
             //.............................ABCDEFGHIJKLMNOPQRSTUVWXYZ
             return new Reflector("UKX-C", "FVPJIAOYEDRZXWGCTKUQSBNMHL");
         }
+
+        public static List<Reflector> GetAll()
+        {
+            return new List<Reflector>
+            {
+                UKWA(),
+                UKWB(),
+                UKWC(),
+            };
+        }
+
+        public static Reflector GetByCode(string code)
+        {
+            return GetAll().FirstOrDefault(x => x.Code == code);
+        }
         #endregion
     }
 }

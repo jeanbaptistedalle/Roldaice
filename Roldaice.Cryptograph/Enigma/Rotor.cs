@@ -69,11 +69,11 @@ namespace Roldaice.Cryptograph.Enigma
         {
             return new List<Rotor>
             {
-                Rotor.I(startingLetter),
-                Rotor.II(startingLetter),
-                Rotor.III(startingLetter),
-                Rotor.IV(startingLetter),
-                Rotor.V(startingLetter),
+                I(startingLetter),
+                II(startingLetter),
+                III(startingLetter),
+                IV(startingLetter),
+                V(startingLetter),
             };
         }
 

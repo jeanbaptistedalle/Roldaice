@@ -28,11 +28,17 @@ namespace Roldaice.Web.Controllers
         public virtual ActionResult Enigma(EnigmaModel model)
         {
             PrepareEnigmaModel(model);
-            /*if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var enigmaCore = new EnigmaCore(Reflector.UKWC, );
-                model.Result = enigmaCore.Encode(model.Text);
-            }*/
+                var rotors = new List<Rotor>
+                {
+                    Rotor.GetByCode(model.SelectedRotor1, model.StartingLetter1),
+                    Rotor.GetByCode(model.SelectedRotor2, model.StartingLetter2),
+                    Rotor.GetByCode(model.SelectedRotor3, model.StartingLetter3),
+                };
+                var enigmaCore = new EnigmaCore(Reflector.UKWB(), rotors.ToArray());
+                model.Result = enigmaCore.Encode(model.Text, model.MoveRotor);
+            }
             return View(model);
         }
 

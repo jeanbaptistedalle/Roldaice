@@ -45,6 +45,7 @@ namespace Roldaice.Web
             
             bundles.Add(new StyleBundle("~/Bundles/Site/Css")
                 .Include("~/Content/Site.css")
+                .Include("~/Content/bootstrap-extension.css")
             );
         }
     }

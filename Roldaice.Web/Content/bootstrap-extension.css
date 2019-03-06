@@ -1,0 +1,112 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.validation-summary-errors {
+    color: #E40045;
+}
+
+    .validation-summary-errors ul li {
+        color: #E40045;
+        list-style: none;
+    }
+
+
+.hidden {
+    display: none !important;
+}
+
+.no-padding {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+@media (min-width: 1200px) {
+    .no-padding-md {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .no-padding-xs {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media(min-width: 768px) {
+    .text-right-sm {
+        text-align: right;
+    }
+
+    .text-left-sm {
+        text-align: left;
+    }
+}
+
+@media(min-width: 992px) {
+    .text-right-md {
+        text-align: right;
+    }
+
+    .text-left-md {
+        text-align: left;
+    }
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.margin-left {
+    margin-left: 10px;
+}
+
+.margin-horizontal {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.margin-vertical {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

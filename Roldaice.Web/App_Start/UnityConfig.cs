@@ -48,5 +48,9 @@ namespace Roldaice.Web
                 .RegisterType<ILogger, Logger>(new ContainerControlledLifetimeManager())
             ;
         }
+        public static ILogger GetLogger()
+        {
+            return Container.Resolve<Logger>();
+        }
     }
 }

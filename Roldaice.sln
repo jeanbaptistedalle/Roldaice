@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roldaice.CryptographTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roldaice.Common", "Roldaice.Common\Roldaice.Common.csproj", "{FCF79DFD-174F-4AE6-AF47-52277DE46377}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roldaice.RollDice", "Roldaice.RollDice\Roldaice.RollDice.csproj", "{C3B24CB0-3728-4825-86CD-BED6E2B1E62B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roldaice.RollDiceTests", "Roldaice.RollDiceTests\Roldaice.RollDiceTests.csproj", "{AC4C5254-A066-4378-BDC4-319C546E228C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{FCF79DFD-174F-4AE6-AF47-52277DE46377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCF79DFD-174F-4AE6-AF47-52277DE46377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCF79DFD-174F-4AE6-AF47-52277DE46377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B24CB0-3728-4825-86CD-BED6E2B1E62B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B24CB0-3728-4825-86CD-BED6E2B1E62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B24CB0-3728-4825-86CD-BED6E2B1E62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B24CB0-3728-4825-86CD-BED6E2B1E62B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4C5254-A066-4378-BDC4-319C546E228C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4C5254-A066-4378-BDC4-319C546E228C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4C5254-A066-4378-BDC4-319C546E228C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4C5254-A066-4378-BDC4-319C546E228C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

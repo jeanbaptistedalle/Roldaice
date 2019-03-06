@@ -241,14 +241,18 @@ function prepareDatetimepicker() {
 }
 
 function prepareSelectpicker() {
-    $('.select-picker').selectpicker({
-        noneSelectedText: "",
-        actionsBox: true,
-        liveSearch: true,
-        liveSearchStyle: 'startsWith',
-        selectAllText: $('input#select-all-label').val(),
-        deselectAllText: $('input#deselect-all-label').val(),
-        container: 'body',
+    $('.select-picker').each(function () {
+        $this = $(this);
+        var noLiveSearch = $this.hasClass('no-live-search');
+        $this.selectpicker({
+            noneSelectedText: "",
+            actionsBox: true,
+            liveSearch: !noLiveSearch,
+            liveSearchStyle: 'startsWith',
+            selectAllText: $('input#select-all-label').val(),
+            deselectAllText: $('input#deselect-all-label').val(),
+            container: 'body',
+        });
     });
 }
 
