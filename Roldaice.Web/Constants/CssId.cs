@@ -5,8 +5,7 @@ using System.Web;
 
 namespace Roldaice.Web.Constants
 {
-    public class FrontAppSettingsKey
+    public class CssId
     {
-        public const string BuildVersion = "BuildVersion";
     }
 }

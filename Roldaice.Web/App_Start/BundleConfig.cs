@@ -8,7 +8,7 @@ namespace Roldaice.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.IgnoreList.Clear();
+            #region Scripts
             bundles.Add(new ScriptBundle("~/Bundles/Mordernizr")
                 .Include("~/Scripts/Dependency/mordernizr-2.8.3.js")
             );
@@ -31,22 +31,26 @@ namespace Roldaice.Web
             bundles.Add(new ScriptBundle("~/Bundles/Site")
                 .Include("~/Scripts/Site.js")
             );
+            #endregion Scripts
 
+            #region Styles
             bundles.Add(new StyleBundle("~/Bundles/Dependency/Css")
-                .Include("~/Content/Dependency/bootstrap.min.css")
-                .Include("~/Content/Dependency/bootstrap-theme.min.css")
-                .Include("~/Content/Dependency/bootstrap-datetimepicker.min.css")
-                .Include("~/Content/Dependency/bootstrap-select.min.css")
-                .Include("~/Content/Dependency/bootstrap-slider.min.css")
-                .Include("~/Content/Dependency/bootstrap-toggle.min.css")
-                .Include("~/Content/Dependency/datatables.min.css")
-                .Include("~/Content/Dependency/font-awesome.min.css")
+                .Include("~/Content/Dependency/bootstrap.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/bootstrap-theme.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/bootstrap-datetimepicker.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/bootstrap-select.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/bootstrap-slider.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/bootstrap-toggle.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/datatables.min.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Dependency/font-awesome.min.css", new CssRewriteUrlTransform())
             );
             
             bundles.Add(new StyleBundle("~/Bundles/Site/Css")
-                .Include("~/Content/Site.css")
-                .Include("~/Content/bootstrap-extension.css")
+                .Include("~/Content/Site.css", new CssRewriteUrlTransform())
+                .Include("~/Content/bootstrap-extension.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Components/loader.css", new CssRewriteUrlTransform())
             );
+            #endregion Scripts
         }
     }
 }

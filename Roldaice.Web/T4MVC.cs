@@ -31,6 +31,7 @@ public static partial class MVC
     public static Roldaice.Web.Controllers.ErrorController Error = new Roldaice.Web.Controllers.T4MVC_ErrorController();
     public static Roldaice.Web.Controllers.HomeController Home = new Roldaice.Web.Controllers.T4MVC_HomeController();
     public static Roldaice.Web.Controllers.RollDiceController RollDice = new Roldaice.Web.Controllers.T4MVC_RollDiceController();
+    public static Roldaice.Web.Controllers.TestController Test = new Roldaice.Web.Controllers.T4MVC_TestController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -118,6 +119,14 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
         public static readonly string bootstrap_extension_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-extension.min.css") ? Url("bootstrap-extension.min.css") : Url("bootstrap-extension.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Components {
+            public const string UrlPath = "~/Content/Components";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string loader_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/loader.min.css") ? Url("loader.min.css") : Url("loader.css");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Dependency {
             public const string UrlPath = "~/Content/Dependency";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
@@ -178,6 +187,13 @@ namespace Links
         }
         public static partial class Content 
         {
+            public static partial class Components 
+            {
+                public static class Assets
+                {
+                    public static readonly string loader_css = T4MVCHelpers.ProcessAssetPath("~/Content/Components/loader.css");
+                }
+            }
             public static partial class Dependency 
             {
                 public static class Assets

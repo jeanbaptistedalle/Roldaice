@@ -69,10 +69,12 @@ namespace T4MVC
                     public class _ViewNamesClass
                     {
                         public readonly string _JavascriptConstants = "_JavascriptConstants";
+                        public readonly string _Loader = "_Loader";
                         public readonly string _NavBar = "_NavBar";
                         public readonly string _Url = "_Url";
                     }
                     public readonly string _JavascriptConstants = "~/Views/Shared/Layout/Partial/_JavascriptConstants.cshtml";
+                    public readonly string _Loader = "~/Views/Shared/Layout/Partial/_Loader.cshtml";
                     public readonly string _NavBar = "~/Views/Shared/Layout/Partial/_NavBar.cshtml";
                     public readonly string _Url = "~/Views/Shared/Layout/Partial/_Url.cshtml";
                 }

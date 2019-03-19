@@ -21,6 +21,7 @@
         @Html.Partial(MVC.Shared.Views.Layout.Partial._JavascriptConstants)
         @RenderBody()
     </div>
+    @Html.Partial(MVC.Shared.Views.Layout.Partial._Loader)
 
     @Scripts.Render("~/Bundles/Dependency")
     @MvcHelper.RenderScriptWithVersion("~/Bundles/Site")

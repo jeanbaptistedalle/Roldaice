@@ -7,6 +7,7 @@ $(document).ready(function () {
 
 
 function prepareSite() {
+    showLoader();
     prepareDataTable();
     prepareToaster();
     prepareDatetimepicker();
@@ -14,6 +15,17 @@ function prepareSite() {
     prepareToggle();
     prepareTooltip();
     prepareSlider();
+
+    // Après les préparations globales, on appelle la fonction de préparation liée à la page si elle existe
+    if (typeof preparePage === 'function') {
+        preparePage();
+    }
+    hideLoader();
+}
+
+//Appel : await sleep(10)
+async function sleep(time) {
+    await new Promise(resolve => setTimeout(resolve, time * 1000/*seconds*/));
 }
 
 function offOnHandle(selector, event, handler) {
@@ -309,5 +321,26 @@ function prepareToaster() {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         }
+    }
+}
+
+function showLoader() {
+    changeLoaderVisibility(true);
+}
+
+function hideLoader() {
+    changeLoaderVisibility(false);
+}
+
+function changeLoaderVisibility(show) {
+    var loader = $("#loader-div");
+
+    if (show && loader.css('visibility') == 'hidden') {
+        loader.css('visibility', 'visible');
+        loader.addClass("overlay-visible");
+    } else if (!show && loader.css('visibility') == 'visible') {
+        loader.removeClass("overlay-visible");
+        loader.css('visibility', 'hidden');
+
     }
 }
