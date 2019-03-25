@@ -46,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\Base\IdBaseDto.cs" />
-    <Compile Include="DTO\Base\IdLabelBaseDto.cs" />
+    <Compile Include="Dto\Base\DtoBase.cs" />
+    <Compile Include="Dto\Base\IdLabelDtoBase.cs" />
+    <Compile Include="Dto\RoleDto.cs" />
+    <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roldaice.ICommon\Roldaice.ICommon.csproj">
+      <Project>{D9F65ED7-32E2-4B61-B8DC-083CC9E2D213}</Project>
+      <Name>Roldaice.ICommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Roldaice.Dal.Entities
 {
-    public abstract class AutoIncrementEntityBase
+    public abstract class AutoIncrementEntityBase : EntityBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public override int Id { get; set; }
     }
 }

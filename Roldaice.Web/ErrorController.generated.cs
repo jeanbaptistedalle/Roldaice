@@ -76,12 +76,14 @@ namespace Roldaice.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string NotFound = "NotFound";
+            public readonly string RedirectToHome = "RedirectToHome";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string NotFound = "NotFound";
+            public const string RedirectToHome = "RedirectToHome";
         }
 
 
@@ -112,6 +114,17 @@ namespace Roldaice.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.NotFound);
             NotFoundOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RedirectToHomeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RedirectToHome()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RedirectToHome);
+            RedirectToHomeOverride(callInfo);
             return callInfo;
         }
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Owin.Security;
 using Roldaice.Helpers.Logger;
 using Roldaice.Web.Helpers;
 using System;
@@ -20,5 +21,13 @@ namespace Roldaice.Web.Controllers
 
         [Dependency]
         public SelectListItemHelper SelectListItemHelper { get; set; }
+
+        public IAuthenticationManager AuthenticationManager => Request.GetOwinContext().Authentication;
+
+        public virtual ActionResult RedirectToHome()
+        {
+            //FIXME : Can't use directly RedirectToAction(MVC.Home.Index()) because this method is not generated for abstract controller
+            return RedirectToAction(MVC.Home.ActionNames.Index, MVC.Home.Name);
+        }
     }
 }

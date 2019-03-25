@@ -77,6 +77,7 @@ namespace Roldaice.Web.Controllers
         {
             public readonly string Index = "Index";
             public readonly string Enigma = "Enigma";
+            public readonly string RedirectToHome = "RedirectToHome";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -84,6 +85,7 @@ namespace Roldaice.Web.Controllers
         {
             public const string Index = "Index";
             public const string Enigma = "Enigma";
+            public const string RedirectToHome = "RedirectToHome";
         }
 
 
@@ -149,6 +151,17 @@ namespace Roldaice.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Enigma);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             EnigmaOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RedirectToHomeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RedirectToHome()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RedirectToHome);
+            RedirectToHomeOverride(callInfo);
             return callInfo;
         }
 

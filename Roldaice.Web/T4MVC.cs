@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static Roldaice.Web.Controllers.AuthenticationController Authentication = new Roldaice.Web.Controllers.T4MVC_AuthenticationController();
     public static Roldaice.Web.Controllers.CryptographController Cryptograph = new Roldaice.Web.Controllers.T4MVC_CryptographController();
     public static Roldaice.Web.Controllers.ErrorController Error = new Roldaice.Web.Controllers.T4MVC_ErrorController();
     public static Roldaice.Web.Controllers.HomeController Home = new Roldaice.Web.Controllers.T4MVC_HomeController();

@@ -14,7 +14,11 @@ namespace Roldaice.Web.App_Start
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<SelectListItemProfile>();
+                cfg.AddProfile<EntitiesAndDtosProfiles.EntitiesToDtos>();
+                cfg.AddProfile<EntitiesAndDtosProfiles.DtosToEntities>();
             });
+
+            config.AssertConfigurationIsValid();
 
             var mapper = config.CreateMapper();
             return mapper;

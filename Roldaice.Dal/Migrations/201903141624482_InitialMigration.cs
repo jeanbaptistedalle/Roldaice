@@ -44,11 +44,11 @@ namespace Roldaice.Dal.Migrations
             #endregion Schema
 
             #region Data
-            Sql("INSERT INTO Role (Id, Label) VALUES (10, 'Administrateur')");
-            Sql("INSERT INTO Role (Id, Label) VALUES (20, 'Utilisateur')");
-            Sql("INSERT INTO Role (Id, Label) VALUES (30, 'Vistieur')");
+            Sql("INSERT INTO [dbo].[Role] (Id, Label) VALUES (10, 'Administrateur')");
+            Sql("INSERT INTO [dbo].[Role] (Id, Label) VALUES (20, 'Utilisateur')");
+            Sql("INSERT INTO [dbo].[Role] (Id, Label) VALUES (30, 'Vistieur')");
 
-            Sql("INSERT INTO User (Login, RoleId) VALUES ('root', 1)");
+            Sql("INSERT INTO [dbo].[User] (Login, Password, Salt, RoleId) VALUES ('root', '', '', 10)");
             #endregion Data
         }
 

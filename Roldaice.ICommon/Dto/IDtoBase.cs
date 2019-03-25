@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roldaice.Common.DTO.Base
+namespace Roldaice.ICommon.Dto
 {
-    public class IdLabelBaseDto : IdBaseDto
+    public interface IDtoBase
     {
-        public string Label { get; set; }
+        int Id { get; set; }
     }
 }

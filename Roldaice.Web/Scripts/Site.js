@@ -60,7 +60,7 @@ function prepareDataTable() {
         );
     }
     var enterForFilter = $('input#enter-filter-label').val();
-    $('table.table.table-bordered:not(.data-table-applyed)').each(function (index, val) {
+    $('table.table.js-apply-data-table:not(.data-table-applyed)').each(function (index, val) {
         var $this = $(val);
         //Permet de n'appliquer qu'une seule fois la datatable sur chaque table (grâce au :not(.data-table-applyed) du selecteur)
         $this.addClass("data-table-applyed");
@@ -210,13 +210,13 @@ function addDatatableFilterHeader(table) {
 }
 
 function prepareSlider() {
-    $('input.input-slider').bootstrapSlider();
+    $('input.js-input-slider').bootstrapSlider();
 }
 
 //http://eonasdan.github.io/bootstrap-datetimepicker/
 function prepareDatetimepicker() {
 
-    $(".datepicker").each(function () {
+    $(".js-datepicker").each(function () {
         var maxDate = $(this).data("max-date");
         $(this).datetimepicker({
             locale: 'fr',
@@ -233,7 +233,7 @@ function prepareDatetimepicker() {
         });
     });
 
-    $(".day-month-picker").datetimepicker({
+    $(".js-day-month-picker").datetimepicker({
         locale: 'fr',
         format: "DD/MM",
         dayViewHeaderFormat: 'MMMM',
@@ -241,7 +241,7 @@ function prepareDatetimepicker() {
         calendarWeeks: true,
     });
 
-    $(".year-picker").datetimepicker({
+    $(".js-year-picker").datetimepicker({
         locale: 'fr',
         format: "YYYY",
         dayViewHeaderFormat: 'YYYY',
@@ -253,7 +253,7 @@ function prepareDatetimepicker() {
 }
 
 function prepareSelectpicker() {
-    $('.select-picker').each(function () {
+    $('.js-select-picker').each(function () {
         $this = $(this);
         var noLiveSearch = $this.hasClass('no-live-search');
         $this.selectpicker({
@@ -269,7 +269,7 @@ function prepareSelectpicker() {
 }
 
 function prepareToggle() {
-    $(".datatoggle").each(function (index, val) {
+    $(".js-datatoggle").each(function (index, val) {
         var element = $(this);
         //On utilise les label Oui/Non par défaut
         var on = "Oui";

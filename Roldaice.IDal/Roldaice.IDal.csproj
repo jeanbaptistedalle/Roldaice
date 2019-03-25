@@ -41,10 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dal\Base\IBaseDal.cs" />
+    <Compile Include="Dal\IUserDal.cs" />
+    <Compile Include="Entities\Base\IEntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\Roldaice.Common\Roldaice.Common.csproj">
+      <Project>{FCF79DFD-174F-4AE6-AF47-52277DE46377}</Project>
+      <Name>Roldaice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roldaice.ICommon\Roldaice.ICommon.csproj">
+      <Project>{D9F65ED7-32E2-4B61-B8DC-083CC9E2D213}</Project>
+      <Name>Roldaice.ICommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

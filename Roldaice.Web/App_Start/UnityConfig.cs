@@ -1,9 +1,14 @@
 using AutoMapper;
+using Roldaice.Dal.Context;
+using Roldaice.Dal.Dal.Base;
 using Roldaice.Helpers.Logger;
 using Roldaice.Web.App_Start;
 using System;
+using System.Linq;
+using System.Reflection;
 using Unity;
 using Unity.Lifetime;
+using Unity.RegistrationByConvention;
 
 namespace Roldaice.Web
 {
@@ -39,15 +44,21 @@ namespace Roldaice.Web
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
+            //Regiter types by convention (For exemple, Cat is registered for ICat)
+            container.RegisterTypes(
+                AllClasses.FromLoadedAssemblies(),
+                WithMappings.FromAllInterfaces,
+                WithName.Default,
+                WithLifetime.ContainerControlled, 
+                overwriteExistingMappings: true);
 
             container
+                .RegisterType<RoldaiceContext>(new HierarchicalLifetimeManager())
                 .RegisterInstance(AutoMapperConfig.RegisterAutoMapper())
                 .RegisterType<ILogger, Logger>(new ContainerControlledLifetimeManager())
             ;
         }
+
         public static ILogger GetLogger()
         {
             return Container.Resolve<Logger>();

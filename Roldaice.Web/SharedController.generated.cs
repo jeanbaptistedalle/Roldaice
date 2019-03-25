@@ -53,10 +53,12 @@ namespace T4MVC
                 public class _ViewNamesClass
                 {
                     public readonly string _Layout = "_Layout";
+                    public readonly string _MiniPanelLayout = "_MiniPanelLayout";
                     public readonly string _PanelCollapsePanel = "_PanelCollapsePanel";
                     public readonly string _PanelLayout = "_PanelLayout";
                 }
                 public readonly string _Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+                public readonly string _MiniPanelLayout = "~/Views/Shared/Layout/_MiniPanelLayout.cshtml";
                 public readonly string _PanelCollapsePanel = "~/Views/Shared/Layout/_PanelCollapsePanel.cshtml";
                 public readonly string _PanelLayout = "~/Views/Shared/Layout/_PanelLayout.cshtml";
                 static readonly _PartialClass s_Partial = new _PartialClass();
@@ -101,9 +103,13 @@ namespace T4MVC
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _MiniPanelCollapsePanel = "_MiniPanelCollapsePanel";
+                    public readonly string _MiniPanelLayout = "_MiniPanelLayout";
                     public readonly string _PanelCollapsePanel = "_PanelCollapsePanel";
                     public readonly string _PanelLayout = "_PanelLayout";
                 }
+                public readonly string _MiniPanelCollapsePanel = "~/Views/Shared/PartialLayout/_MiniPanelCollapsePanel.cshtml";
+                public readonly string _MiniPanelLayout = "~/Views/Shared/PartialLayout/_MiniPanelLayout.cshtml";
                 public readonly string _PanelCollapsePanel = "~/Views/Shared/PartialLayout/_PanelCollapsePanel.cshtml";
                 public readonly string _PanelLayout = "~/Views/Shared/PartialLayout/_PanelLayout.cshtml";
             }

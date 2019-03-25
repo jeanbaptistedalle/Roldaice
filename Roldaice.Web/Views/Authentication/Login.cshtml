@@ -1,0 +1,48 @@
+﻿@model Roldaice.Web.Models.Authentication.LoginModel
+@{
+    ViewBag.Title = "Authentification";
+    Layout = MVC.Shared.Views.Layout._MiniPanelLayout;
+}
+
+@section title{
+    <i class="@CssClass.FontAwesome.User"></i> Connexion
+}
+
+@using (Html.BeginForm(MVC.Authentication.Login(), FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            @Html.LabelFor(m => m.Login, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12">
+            @Html.TextBoxFor(m => m.Login, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            @Html.LabelFor(m => m.IsPersistent, new { @class = "control-label" })
+        </div>
+        <div class="col-xs-12">
+            @Html.CheckBoxFor(m => m.IsPersistent, new { @class = "form-control " + CssClass.DataToggle })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary"><i class="@CssClass.FontAwesome.User"></i> Connection</button>
+        </div>
+    </div>
+}

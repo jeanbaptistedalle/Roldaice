@@ -28,9 +28,9 @@ namespace Roldaice.Dal.Entities
         [StringLength(100)]
         public string Salt { get; set; }
 
-        [SqlDefaultValue(DefaultValue = DalConstants.SqlFunction.GetDate)]
+        [SqlDefaultValue(DalConstants.SqlFunction.GetDate)]
         public DateTime CreationDate { get; set; }
         public int RoleId { get; set; }
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

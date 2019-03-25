@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -39,16 +42,36 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.4.0.3\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.9.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Configuration.5.9.1\lib\net45\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.9.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.9.5\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\SqlDefaultValueAttribute.cs" />
+    <Compile Include="Dal\Base\DalBase.cs" />
+    <Compile Include="Dal\Base\EntityDalBase.cs" />
+    <Compile Include="Dal\UserDal.cs" />
     <Compile Include="Entities\Base\AutoIncrementEntityBase.cs" />
     <Compile Include="Helpers\DalConstants.cs" />
     <Compile Include="Migrations\201903141624482_InitialMigration.cs" />
@@ -74,6 +97,24 @@
     <EmbeddedResource Include="Migrations\201903141624482_InitialMigration.resx">
       <DependentUpon>201903141624482_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roldaice.Common\Roldaice.Common.csproj">
+      <Project>{FCF79DFD-174F-4AE6-AF47-52277DE46377}</Project>
+      <Name>Roldaice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roldaice.Helpers\Roldaice.Helpers.csproj">
+      <Project>{751A716F-166F-4581-BAA0-8B4BEED88AAB}</Project>
+      <Name>Roldaice.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roldaice.ICommon\Roldaice.ICommon.csproj">
+      <Project>{D9F65ED7-32E2-4B61-B8DC-083CC9E2D213}</Project>
+      <Name>Roldaice.ICommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roldaice.IDal\Roldaice.IDal.csproj">
+      <Project>{9093AB0A-B5DF-4368-842B-DC125013DFF5}</Project>
+      <Name>Roldaice.IDal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

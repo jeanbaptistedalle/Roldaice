@@ -5,7 +5,7 @@
 }
 
 @section title{
-    <i class="fa fa-cogs"></i> Configuration
+    <i class="@CssClass.FontAwesome.Configuration"></i> Configuration
 }
 
 @using (Html.BeginForm(MVC.RollDice.RollADice(), FormMethod.Post, new { @class = "form-horizontal" }))
@@ -18,7 +18,7 @@
                 @Html.LabelFor(m => m.DiceCode, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.DropDownListFor(m => m.DiceCode, Model.AvailableDices, new { @class = "form-control select-picker no-live-search" })
+                @Html.DropDownListFor(m => m.DiceCode, Model.AvailableDices, new { @class = "form-control no-live-search " + CssClass.Select })
             </div>
         </div>
 
@@ -27,7 +27,7 @@
                 @Html.LabelFor(m => m.TwoDice, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.CheckBoxFor(m => m.TwoDice, new { @class = "checkbox datatoggle" })
+                @Html.CheckBoxFor(m => m.TwoDice, new { @class = "form-control " + CssClass.DataToggle })
             </div>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
@@ -35,7 +35,7 @@
                 @Html.LabelFor(m => m.Plus2, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.CheckBoxFor(m => m.Plus2, new { @class = "checkbox datatoggle" })
+                @Html.CheckBoxFor(m => m.Plus2, new { @class = "form-control " + CssClass.DataToggle })
             </div>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
@@ -43,14 +43,14 @@
                 @Html.LabelFor(m => m.Average, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.CheckBoxFor(m => m.Average, new { @class = "checkbox datatoggle" })
+                @Html.CheckBoxFor(m => m.Average, new { @class = "form-control " + CssClass.DataToggle })
             </div>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-xs-12">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Lancer !</button>
+            <button type="submit" class="btn btn-primary"><i class="@CssClass.FontAwesome.Submit"></i> Lancer !</button>
         </div>
     </div>
 

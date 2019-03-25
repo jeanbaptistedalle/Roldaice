@@ -46,5 +46,26 @@ namespace Roldaice.Web.Helpers
             var version = AppSettingsHelper.GetBuildVersion();
             return Styles.RenderFormat("<link rel=\"stylesheet\" href=\"{0}?v=" + version + "\">", path);
         }
+
+        public static MvcHtmlString ActionLinkIcon(this HtmlHelper html, string linkText, ActionResult result, string htmlIconClass)
+        {
+            return html.ActionLinkIcon(linkText, result, htmlIconClass, new { });
+        }
+
+        public static MvcHtmlString ActionLinkIcon(this HtmlHelper html, string linkText, ActionResult result, string htmlIconClass, string htmlClass)
+        {
+            return html.ActionLinkIcon(linkText, result, htmlIconClass, new { @class = htmlClass });
+        }
+
+        public static MvcHtmlString ActionLinkIcon(this HtmlHelper html, string linkText, ActionResult result, string htmlIconAttributes, object htmlAttributes)
+        {
+            var replaceMe = "replace_me";
+            var iBuilder = new TagBuilder("i");
+            iBuilder.MergeAttributes(new RouteValueDictionary(new { @class = htmlIconAttributes }));
+            string iHtml = iBuilder.ToString(TagRenderMode.Normal);
+            var preparedLinkText = $"{iHtml} {linkText}";
+            var link = html.ActionLink(replaceMe, result, htmlAttributes);
+            return MvcHtmlString.Create(link.ToString().Replace(replaceMe, preparedLinkText));
+        }
     }
 }
