@@ -15,5 +15,6 @@ namespace Roldaice.Common.Dto
         public DateTime CreationDate { get; set; }
         public int RoleId { get; set; }
         public RoleDto Role { get; set; }
+        public UserCustomizationDto UserCustomization { get; set; }
     }
 }

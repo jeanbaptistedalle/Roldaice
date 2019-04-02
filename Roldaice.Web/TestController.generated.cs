@@ -76,6 +76,7 @@ namespace Roldaice.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string LoadingScreen = "LoadingScreen";
+            public readonly string Identicon = "Identicon";
             public readonly string RedirectToHome = "RedirectToHome";
         }
 
@@ -83,10 +84,19 @@ namespace Roldaice.Web.Controllers
         public class ActionNameConstants
         {
             public const string LoadingScreen = "LoadingScreen";
+            public const string Identicon = "Identicon";
             public const string RedirectToHome = "RedirectToHome";
         }
 
 
+        static readonly ActionParamsClass_Identicon s_params_Identicon = new ActionParamsClass_Identicon();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Identicon IdenticonParams { get { return s_params_Identicon; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Identicon
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -97,8 +107,10 @@ namespace Roldaice.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Identicon = "Identicon";
                 public readonly string LoadingScreen = "LoadingScreen";
             }
+            public readonly string Identicon = "~/Views/Test/Identicon.cshtml";
             public readonly string LoadingScreen = "~/Views/Test/LoadingScreen.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
@@ -127,6 +139,29 @@ namespace Roldaice.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.LoadingScreen);
             LoadingScreenOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void IdenticonOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Identicon()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Identicon);
+            IdenticonOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void IdenticonOverride(T4MVC_System_Web_Mvc_ViewResult callInfo, Roldaice.Web.Models.Test.IdenticonModel model);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Identicon(Roldaice.Web.Models.Test.IdenticonModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Identicon);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            IdenticonOverride(callInfo, model);
             return callInfo;
         }
 

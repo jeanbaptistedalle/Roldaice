@@ -9,7 +9,6 @@ using System.Reflection;
 using Unity;
 using Unity.Lifetime;
 using Unity.RegistrationByConvention;
-
 namespace Roldaice.Web
 {
     /// <summary>
@@ -49,7 +48,7 @@ namespace Roldaice.Web
                 AllClasses.FromLoadedAssemblies(),
                 WithMappings.FromAllInterfaces,
                 WithName.Default,
-                WithLifetime.ContainerControlled, 
+                WithLifetime.ContainerControlled,
                 overwriteExistingMappings: true);
 
             container

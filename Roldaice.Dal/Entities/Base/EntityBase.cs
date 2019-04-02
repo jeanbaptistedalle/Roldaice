@@ -12,8 +12,7 @@ namespace Roldaice.Dal.Entities
 
     public abstract class EntityBase : IEntityBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public virtual int Id { get; set; }
     }
 }

@@ -9,6 +9,7 @@
     @Styles.Render("~/Bundles/Dependency/Css")
     @MvcHelper.RenderStyleWithVersion("~/Bundles/Site/Css")
     @RenderSection("styles", required: false)
+    @Html.Partial(MVC.Shared.Views.Layout.Partial._UserTheme)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

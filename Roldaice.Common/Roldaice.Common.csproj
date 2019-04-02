@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Roldaice.Common</RootNamespace>
     <AssemblyName>Roldaice.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -49,6 +49,7 @@
     <Compile Include="Dto\Base\DtoBase.cs" />
     <Compile Include="Dto\Base\IdLabelDtoBase.cs" />
     <Compile Include="Dto\RoleDto.cs" />
+    <Compile Include="Dto\UserCustomizationDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

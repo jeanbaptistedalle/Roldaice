@@ -12,6 +12,8 @@
 {
     @Html.ValidationSummary()
 
+    @Html.HiddenFor(m => m.ReturnUrl)
+
     <div class="form-group">
         <div class="col-xs-12">
             @Html.LabelFor(m => m.Login, new { @class = "control-label" })

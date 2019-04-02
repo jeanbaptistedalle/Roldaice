@@ -26,6 +26,8 @@ namespace Roldaice.Web
                 .Include("~/Scripts/Dependency/bootstrap-toggle.min.js")
                 .Include("~/Scripts/Dependency/datatables.min.js")
                 .Include("~/Scripts/Dependency/toastr.min.js")
+                .Include("~/Scripts/Dependency/pnglib.min.js")
+                .Include("~/Scripts/Dependency/identicon.min.js")
             );
 
             bundles.Add(new ScriptBundle("~/Bundles/Site")
@@ -49,6 +51,7 @@ namespace Roldaice.Web
                 .Include("~/Content/Site.css", new CssRewriteUrlTransform())
                 .Include("~/Content/bootstrap-extension.css", new CssRewriteUrlTransform())
                 .Include("~/Content/Components/loader.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Components/image-overlay.css", new CssRewriteUrlTransform())
             );
             #endregion Scripts
         }

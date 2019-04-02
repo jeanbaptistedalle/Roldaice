@@ -21,8 +21,7 @@ namespace Roldaice.Web.Models.Cryptograph
             StartingLetter3 = 'A';
         }
 
-        [DisplayName("Texte à chiffrer")]
-        [Required(AllowEmptyStrings = false)]
+        [DisplayName("Texte à chiffrer"), Required(AllowEmptyStrings = false)]
         public string Text { get; set; }
 
         [DisplayName("Résultat")]

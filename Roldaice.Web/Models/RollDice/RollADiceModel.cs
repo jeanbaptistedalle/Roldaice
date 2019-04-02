@@ -11,8 +11,10 @@ namespace Roldaice.Web.Models.RollDice
     {
         [DisplayName("+2")]
         public bool Plus2 { get; set; }
+
         [DisplayName("2D")]
         public bool TwoDice { get; set; }
+
         [DisplayName("/2")]
         public bool Average { get; set; }
 

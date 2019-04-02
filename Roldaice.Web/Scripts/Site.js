@@ -7,18 +7,24 @@ $(document).ready(function () {
 
 
 function prepareSite() {
-    showLoader();
-    prepareDataTable();
-    prepareToaster();
-    prepareDatetimepicker();
-    prepareSelectpicker();
-    prepareToggle();
-    prepareTooltip();
-    prepareSlider();
+    try {
 
-    // Après les préparations globales, on appelle la fonction de préparation liée à la page si elle existe
-    if (typeof preparePage === 'function') {
-        preparePage();
+        showLoader();
+        prepareDataTable();
+        prepareToaster();
+        prepareDatetimepicker();
+        prepareSelectpicker();
+        prepareToggle();
+        prepareTooltip();
+        prepareSlider();
+        prepareIdenticon();
+
+        // Après les préparations globales, on appelle la fonction de préparation liée à la page si elle existe
+        if (typeof preparePage === 'function') {
+            preparePage();
+        }
+    } catch{
+        toastr['error']("Une erreur est survenue. Si celle-ci persiste, contactez l'administrateur");
     }
     hideLoader();
 }
@@ -343,4 +349,22 @@ function changeLoaderVisibility(show) {
         loader.css('visibility', 'hidden');
 
     }
+}
+
+function prepareIdenticon() {
+    $('img.js-identicon').each(function (index, val) {
+        var element = $(this);
+        var hash = element.data('hash');
+        if (hash) {
+            var size = element.data('size');
+            if (!size) {
+                size = 420;
+            }
+
+            var data = new Identicon(hash, size).toString();
+            element.attr('width', size);
+            element.attr('height', size);
+            element.attr('src', 'data:image/png;base64,' + data);
+        }
+    });
 }

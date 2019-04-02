@@ -16,5 +16,6 @@ namespace Roldaice.Web.Models.Authentication
 
         [DisplayName("Se souvenir de moi")]
         public bool IsPersistent { get; set; }
+        public string ReturnUrl { get; set; }
     }
 }

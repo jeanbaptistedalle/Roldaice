@@ -10,8 +10,7 @@ namespace Roldaice.Dal.Entities
 {
     public abstract class AutoIncrementEntityBase : EntityBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public override int Id { get; set; }
     }
 }

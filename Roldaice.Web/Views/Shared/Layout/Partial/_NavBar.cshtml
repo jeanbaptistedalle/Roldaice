@@ -29,6 +29,7 @@
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test <i class="caret"></i></a>
             <ul class="dropdown-menu last-level">
                 <li>@Html.ActionLink("Ecran de chargement", MVC.Test.LoadingScreen())</li>
+                <li>@Html.ActionLink("Identicon", MVC.Test.Identicon())</li>
             </ul>
         </li>
     </ul>
@@ -36,8 +37,16 @@
         @if (authenticated)
         {
             <li>
+                <div class="image-overlay">
+                    <img class="@CssClass.Identicon" data-hash="@User.Identity.GetIdenticonHash()" data-size="50" data-toggle="tooltip" title="Changer mon avatar" />
+                    <div class="overlay">
+                        <a href="@Url.Action(MVC.Authentication.EditAccountSettings())">
+                            <i class="@CssClass.FontAwesome.Configuration"></i>
+                        </a>
+                    </div>
+                </div>
                 <p class="navbar-text">
-                    <i class="@CssClass.FontAwesome.User"></i> @User.Identity.Name
+                    @User.Identity.Name
                 </p>
             </li>
         }

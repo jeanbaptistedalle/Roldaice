@@ -77,6 +77,7 @@ namespace Roldaice.Web.Controllers
         {
             public readonly string Login = "Login";
             public readonly string Logout = "Logout";
+            public readonly string EditAccountSettings = "EditAccountSettings";
             public readonly string RedirectToHome = "RedirectToHome";
         }
 
@@ -85,6 +86,7 @@ namespace Roldaice.Web.Controllers
         {
             public const string Login = "Login";
             public const string Logout = "Logout";
+            public const string EditAccountSettings = "EditAccountSettings";
             public const string RedirectToHome = "RedirectToHome";
         }
 
@@ -149,6 +151,17 @@ namespace Roldaice.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Logout);
             LogoutOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditAccountSettingsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult EditAccountSettings()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditAccountSettings);
+            EditAccountSettingsOverride(callInfo);
             return callInfo;
         }
 

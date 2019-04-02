@@ -9,8 +9,7 @@ namespace Roldaice.Dal.Entities
 {
     public class Role : EntityBase
     {
-        [Required]
-        [StringLength(200)]
+        [Required, StringLength(200)]
         public string Label { get; set; }
         public virtual List<User> Users { get; set; }
     }

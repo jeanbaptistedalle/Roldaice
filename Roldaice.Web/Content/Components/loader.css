@@ -1,5 +1,5 @@
 ﻿
-.overlay {
+.loader-overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 100%;
     width: 100%;
@@ -48,7 +48,7 @@ svg {
         text-decoration: none;
     }
 
-/*.overlay div {
+/*.loader-overlay div {
     margin: 10em auto;
 }
 

@@ -12,25 +12,22 @@ namespace Roldaice.Dal.Entities
 {
     public class User : AutoIncrementEntityBase
     {
-        [Required]
-        [Index(IsUnique = true)]
-        [StringLength(100)]
+        [Required, Index(IsUnique = true), StringLength(100)]
         public string Login { get; set; }
 
         /// <summary>
         /// The password is a 64 character string because it's stored as a hash
         /// </summary>
-        [Required]
-        [StringLength(64)]
+        [Required, StringLength(64)]
         public string Password { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required, StringLength(100)]
         public string Salt { get; set; }
 
         [SqlDefaultValue(DalConstants.SqlFunction.GetDate)]
         public DateTime CreationDate { get; set; }
         public int RoleId { get; set; }
         public virtual Role Role { get; set; }
+        public virtual UserCustomization UserCustomization { get; set; }
     }
 }

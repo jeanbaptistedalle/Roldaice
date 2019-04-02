@@ -102,11 +102,13 @@ namespace Links
             public static readonly string bootstrap_toggle_min_js = Url("bootstrap-toggle.min.js");
             public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
             public static readonly string datatables_min_js = Url("datatables.min.js");
+            public static readonly string identicon_min_js = Url("identicon.min.js");
             public static readonly string jquery_3_3_1_min_js = Url("jquery-3.3.1.min.js");
             public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
             public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
             public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
             public static readonly string moment_with_locales_min_js = Url("moment-with-locales.min.js");
+            public static readonly string pnglib_min_js = Url("pnglib.min.js");
             public static readonly string toastr_min_js = Url("toastr.min.js");
         }
     
@@ -124,6 +126,7 @@ namespace Links
             public const string UrlPath = "~/Content/Components";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string image_overlay_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/image-overlay.min.css") ? Url("image-overlay.min.css") : Url("image-overlay.css");
             public static readonly string loader_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/loader.min.css") ? Url("loader.min.css") : Url("loader.css");
         }
     
@@ -173,11 +176,13 @@ namespace Links
                     public static readonly string bootstrap_toggle_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/bootstrap-toggle.min.js"); 
                     public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/bootstrap.min.js"); 
                     public static readonly string datatables_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/datatables.min.js"); 
+                    public static readonly string identicon_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/identicon.min.js"); 
                     public static readonly string jquery_3_3_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/jquery-3.3.1.min.js"); 
                     public static readonly string jquery_validate_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/jquery.validate.min.js"); 
                     public static readonly string jquery_validate_unobtrusive_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/jquery.validate.unobtrusive.min.js"); 
                     public static readonly string modernizr_2_8_3_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/modernizr-2.8.3.js"); 
                     public static readonly string moment_with_locales_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/moment-with-locales.min.js"); 
+                    public static readonly string pnglib_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/pnglib.min.js"); 
                     public static readonly string toastr_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Dependency/toastr.min.js"); 
                 }
             }
@@ -192,6 +197,7 @@ namespace Links
             {
                 public static class Assets
                 {
+                    public static readonly string image_overlay_css = T4MVCHelpers.ProcessAssetPath("~/Content/Components/image-overlay.css");
                     public static readonly string loader_css = T4MVCHelpers.ProcessAssetPath("~/Content/Components/loader.css");
                 }
             }

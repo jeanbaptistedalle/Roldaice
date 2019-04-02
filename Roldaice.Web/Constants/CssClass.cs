@@ -14,6 +14,8 @@ namespace Roldaice.Web.Constants
         public const string YearPicker = "js-year-picker";
         public const string Select = "js-select-picker";
         public const string DataToggle = "js-datatoggle";
+        public const string Identicon = "js-identicon";
+        
 
 
         public class FontAwesome

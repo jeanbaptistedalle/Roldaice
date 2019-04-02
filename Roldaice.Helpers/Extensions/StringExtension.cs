@@ -32,6 +32,11 @@ namespace Roldaice.Helpers.Extensions
             return result;
         }
 
+        public static string ToSHA256(this string source)
+        {
+            return source.ToSHA256(String.Empty);
+        }
+
         public static string ToSHA256(this string source, string salt)
         {
             // Create a SHA256   
