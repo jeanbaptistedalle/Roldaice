@@ -1,0 +1,59 @@
+﻿@{
+    var authenticated = User.Identity.IsAuthenticated;
+}
+
+<div class="modal" id="@CssId.AppList">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <button type="button" class="close pull-right margin-right" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="row margin-bottom">
+                    <span class="margin-horizontal">Bonjour, @(authenticated ? User.Identity.Name : "Identifiez-vous")</span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <a href="@Url.Action(MVC.RollDice.RollADice())" class="@CssClass.AppIcon">
+                            <i class="fa fa-fw fa-5x fa-cog"></i>
+                            <span>RollDice</span>
+                        </a>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <a href="@Url.Action(MVC.Cryptograph.Enigma())" class="@CssClass.AppIcon">
+                            <i class="fa fa-fw fa-5x fa-lock"></i>
+                            <span>Enigma</span>
+                        </a>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <a href="@Url.Action(MVC.Test.Index())" class="@CssClass.AppIcon">
+                            <i class="fa fa-fw fa-5x fa-flask"></i>
+                            <span>Test</span>
+                        </a>
+                    </div>
+
+                    @if (authenticated)
+                    {
+                        <div class="col-xs-4">
+                            <a href="@Url.Action(MVC.Account.Logout())" class="@CssClass.AppIcon">
+                                <i class="fa fa-fw fa-5x fa-sign-out"></i>
+                                <span>Déconnexion</span>
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-xs-4">
+                            <a href="@Url.Action(MVC.Account.Login())" class="@CssClass.AppIcon">
+                                <i class="fa fa-fw fa-5x fa-sign-in"></i>
+                                <span>Connexion</span>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

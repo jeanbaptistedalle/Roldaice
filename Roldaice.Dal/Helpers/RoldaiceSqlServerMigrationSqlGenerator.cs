@@ -18,9 +18,8 @@ namespace Roldaice.Dal.Helpers
     {
         private int dropConstraintCount = 0;
 
-#if !DEBUG
-        //TODO : Find better way to insert transaction in script without having to change to release mode
-        protected override void Generate(SqlOperation sqlOperation)
+        //TODO : Find way to insert transaction only when generating script
+        /*protected override void Generate(SqlOperation sqlOperation)
         {
             if (sqlOperation.SuppressTransaction)
             {
@@ -43,8 +42,7 @@ namespace Roldaice.Dal.Helpers
             }
 
             yield return new MigrationStatement { Sql = "COMMIT TRAN" };
-        }
-#endif
+        }*/
 
         protected override void Generate(AddColumnOperation addColumnOperation)
         {

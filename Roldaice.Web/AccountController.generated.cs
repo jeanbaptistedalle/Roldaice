@@ -25,13 +25,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Roldaice.Web.Controllers
 {
-    public partial class AuthenticationController
+    public partial class AccountController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public AuthenticationController() { }
+        public AccountController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected AuthenticationController(Dummy d) { }
+        protected AccountController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -61,13 +61,13 @@ namespace Roldaice.Web.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public AuthenticationController Actions { get { return MVC.Authentication; } }
+        public AccountController Actions { get { return MVC.Account; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Authentication";
+        public readonly string Name = "Account";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Authentication";
+        public const string NameConst = "Account";
         [GeneratedCode("T4MVC", "2.0")]
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -109,16 +109,18 @@ namespace Roldaice.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string EditAccountSettings = "EditAccountSettings";
                 public readonly string Login = "Login";
             }
-            public readonly string Login = "~/Views/Authentication/Login.cshtml";
+            public readonly string EditAccountSettings = "~/Views/Account/EditAccountSettings.cshtml";
+            public readonly string Login = "~/Views/Account/Login.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_AuthenticationController : Roldaice.Web.Controllers.AuthenticationController
+    public partial class T4MVC_AccountController : Roldaice.Web.Controllers.AccountController
     {
-        public T4MVC_AuthenticationController() : base(Dummy.Instance) { }
+        public T4MVC_AccountController() : base(Dummy.Instance) { }
 
         [NonAction]
         partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
@@ -132,10 +134,10 @@ namespace Roldaice.Web.Controllers
         }
 
         [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Roldaice.Web.Models.Authentication.LoginModel model);
+        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Roldaice.Web.Models.Account.LoginModel model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Login(Roldaice.Web.Models.Authentication.LoginModel model)
+        public override System.Web.Mvc.ActionResult Login(Roldaice.Web.Models.Account.LoginModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);

@@ -2,63 +2,67 @@
     var authenticated = User.Identity.IsAuthenticated;
 }
 
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    @Html.ActionLink("Roldaice", MVC.Home.Index(), new { @class = "navbar-brand" })
-</div>
-<div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li>@Html.ActionLink("Accueil", MVC.Home.Index())</li>
-        <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cryptographe <i class="caret"></i></a>
-            <ul class="dropdown-menu last-level">
-                <li>@Html.ActionLink("Enigma", MVC.Cryptograph.Enigma())</li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RollDice <i class="caret"></i></a>
-            <ul class="dropdown-menu last-level">
-                <li>@Html.ActionLink("Jet de dés", MVC.RollDice.RollADice())</li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test <i class="caret"></i></a>
-            <ul class="dropdown-menu last-level">
-                <li>@Html.ActionLink("Ecran de chargement", MVC.Test.LoadingScreen())</li>
-                <li>@Html.ActionLink("Identicon", MVC.Test.Identicon())</li>
-            </ul>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
+@*<ul class="nav navbar-nav navbar-left">
+        <li>@Html.ActionLink("Roldaice", MVC.Home.Index(), new { @class = "navbar-brand" })</li>
         @if (authenticated)
         {
             <li>
                 <div class="image-overlay">
-                    <img class="@CssClass.Identicon" data-hash="@User.Identity.GetIdenticonHash()" data-size="50" data-toggle="tooltip" title="Changer mon avatar" />
+                    <img class="@CssClass.Identicon image" data-hash="@User.Identity.GetIdenticonHash()" data-size="50" data-toggle="tooltip" title="Changer mon avatar" />
                     <div class="overlay">
-                        <a href="@Url.Action(MVC.Authentication.EditAccountSettings())">
+                        <a href="@Url.Action(MVC.Account.EditAccountSettings())">
                             <i class="@CssClass.FontAwesome.Configuration"></i>
                         </a>
                     </div>
                 </div>
+            </li>
+            <li>
                 <p class="navbar-text">
                     @User.Identity.Name
                 </p>
             </li>
         }
-        <li>
-            @if (authenticated)
-            {
-                @Html.ActionLinkIcon("Déconnexion", MVC.Authentication.Logout(), CssClass.FontAwesome.Logout)
-            }
-            else
-            {
-                @Html.ActionLinkIcon("Connexion", MVC.Authentication.Login(), CssClass.FontAwesome.Login)
-            }
-        </li>
     </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Menu <i class="caret"></i></a>
+            <ul id="menu" class="dropdown-menu last-level collapse">
+                <li>@Html.ActionLink("RollDice", MVC.RollDice.RollADice())</li>
+                <li>@Html.ActionLink("Enigma", MVC.Cryptograph.Enigma())</li>
+                <li class="divider"></li>
+                <li>@Html.ActionLink("Test", MVC.Test.Index())</li>
+                <li class="divider"></li>
+                <li>
+                    @if (authenticated)
+                    {
+                        @Html.ActionLinkIcon("Déconnexion", MVC.Account.Logout(), CssClass.FontAwesome.Logout)
+                    }
+                    else
+                    {
+                        @Html.ActionLinkIcon("Connexion", MVC.Account.Login(), CssClass.FontAwesome.Login)
+                    }
+                </li>
+            </ul>
+        </li>
+    </ul>*@
+
+<div class="nav navbar-nav">
+    @Html.ActionLink("Roldaice", MVC.Home.Index(), new { @class = "navbar-brand" })
+    @if (authenticated)
+    {
+        <div class="navbar-link no-padding">
+            <div class="image-overlay">
+                <img class="@CssClass.Identicon image" data-hash="@User.Identity.GetIdenticonHash()" data-size="50" data-toggle="tooltip" title="Changer mon avatar" />
+                <div class="overlay">
+                    <a href="@Url.Action(MVC.Account.EditAccountSettings())">
+                        <i class="@CssClass.FontAwesome.Configuration"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+    <a href="" class="navbar-link navbar-right" data-toggle="modal" data-target="#@CssId.AppList">
+        <i class="fa fa-th"></i>
+    </a>
 </div>

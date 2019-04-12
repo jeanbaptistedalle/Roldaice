@@ -1,7 +1,6 @@
 ﻿.image-overlay {
+    display: block;
     position: relative;
-    width: 100%;
-    max-width: 400px;
 }
 
     .image-overlay .image {

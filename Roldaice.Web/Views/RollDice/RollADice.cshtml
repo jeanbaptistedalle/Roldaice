@@ -27,7 +27,7 @@
                 @Html.LabelFor(m => m.TwoDice, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.CheckBoxFor(m => m.TwoDice, new { @class = "form-control " + CssClass.DataToggle })
+                @Html.EditorFor(m => m.TwoDice)
             </div>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
@@ -35,7 +35,7 @@
                 @Html.LabelFor(m => m.Plus2, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.CheckBoxFor(m => m.Plus2, new { @class = "form-control " + CssClass.DataToggle })
+                @Html.EditorFor(m => m.Plus2)
             </div>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-1 no-padding">
@@ -43,7 +43,7 @@
                 @Html.LabelFor(m => m.Average, new { @class = "control-label text-left" })
             </div>
             <div class="col-xs-12">
-                @Html.CheckBoxFor(m => m.Average, new { @class = "form-control " + CssClass.DataToggle })
+                @Html.EditorFor(m => m.Average)
             </div>
         </div>
     </div>

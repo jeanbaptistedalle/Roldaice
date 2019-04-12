@@ -27,5 +27,6 @@
     @Scripts.Render("~/Bundles/Dependency")
     @MvcHelper.RenderScriptWithVersion("~/Bundles/Site")
     @RenderSection("scripts", required: false)
+    @Html.Partial(MVC.Shared.Views.Layout.Partial._AppList)
 </body>
 </html>

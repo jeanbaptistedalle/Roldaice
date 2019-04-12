@@ -3,7 +3,7 @@ using Microsoft.Owin.Security;
 using Roldaice.Helpers.Constants;
 using Roldaice.Helpers.Extensions;
 using Roldaice.IDal.Dal;
-using Roldaice.Web.Models.Authentication;
+using Roldaice.Web.Models.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using Unity;
 
 namespace Roldaice.Web.Controllers
 {
-    public partial class AuthenticationController : BaseController
+    public partial class AccountController : BaseController
     {
         [Dependency]
         public IUserDal UserDal { get; set; }

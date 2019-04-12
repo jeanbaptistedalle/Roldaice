@@ -176,6 +176,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\AutoMapperProfiles\EntitiesAndDtosProfiles.cs" />
     <Compile Include="App_Start\AutoMapperProfiles\SelectListItemProfile.cs" />
@@ -186,13 +189,10 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Attributes\LogHandleErrorAttribute.cs" />
-    <Compile Include="AuthenticationController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Constants\CssClass.cs" />
     <Compile Include="Constants\CssId.cs" />
     <Compile Include="Constants\FrontAppSettingsKey.cs" />
-    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\CryptographController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -215,7 +215,7 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Authentication\LoginModel.cs" />
+    <Compile Include="Models\Account\LoginModel.cs" />
     <Compile Include="Models\Cryptograph\EnigmaModel.cs" />
     <Compile Include="Models\RollDice\RollADiceModel.cs" />
     <Compile Include="Models\Test\IdenticonModel.cs" />
@@ -251,6 +251,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Account\Login.js" />
     <Content Include="Scripts\Dependency\bootstrap-confirmation.min.js" />
     <Content Include="Scripts\Dependency\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\Dependency\bootstrap-select.min.js" />
@@ -276,9 +277,6 @@
       <DependentUpon>appSetting.config</DependentUpon>
       <IsTransformFile>true</IsTransformFile>
     </None>
-    <Content Include="Configuration\connectionStrings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Configuration\log4net.Debug.config">
       <DependentUpon>log4net.config</DependentUpon>
       <IsTransformFile>true</IsTransformFile>
@@ -299,12 +297,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
+    <None Include="T4MVC.tt.hooks.t4" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\Dependency\moment-with-locales.min.js" />
     <Content Include="Scripts\Dependency\pnglib.min.js" />
     <Content Include="Scripts\Dependency\toastr.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -319,7 +316,6 @@
     <Content Include="Views\Shared\Layout\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cryptograph\Index.cshtml" />
-    <None Include="T4MVC.tt.hooks.t4" />
     <Content Include="Views\Cryptograph\Enigma.cshtml" />
     <Content Include="Views\Shared\Layout\_PanelLayout.cshtml" />
     <Content Include="Views\Shared\Error404.cshtml" />
@@ -334,16 +330,22 @@
     <Content Include="Views\Shared\PartialLayout\_PanelCollapsePanel.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_Loader.cshtml" />
     <Content Include="Views\Test\LoadingScreen.cshtml" />
-    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\Layout\_MiniPanelLayout.cshtml" />
     <Content Include="Views\Shared\PartialLayout\_MiniPanelLayout.cshtml" />
     <Content Include="Views\Shared\PartialLayout\_MiniPanelCollapsePanel.cshtml" />
     <Content Include="Views\Test\Identicon.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_UserTheme.cshtml" />
+    <Content Include="Views\Account\EditAccountSettings.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Shared\Layout\Partial\_AppList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Models\Home\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Test\Partial\" />
   </ItemGroup>
   <ItemGroup>

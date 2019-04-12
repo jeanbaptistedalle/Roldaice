@@ -10,6 +10,11 @@ namespace Roldaice.Web.Controllers
 {
     public partial class TestController : BaseController
     {
+        public virtual ViewResult Index()
+        {
+            return View();
+        }
+
         public virtual ViewResult LoadingScreen()
         {
             return View();

@@ -33,6 +33,10 @@ namespace Roldaice.Web
             bundles.Add(new ScriptBundle("~/Bundles/Site")
                 .Include("~/Scripts/Site.js")
             );
+
+            bundles.Add(new ScriptBundle("~/Bundles/Account/Login")
+                .Include("~/Scripts/Account/Login.js")
+            );
             #endregion Scripts
 
             #region Styles
@@ -52,6 +56,7 @@ namespace Roldaice.Web
                 .Include("~/Content/bootstrap-extension.css", new CssRewriteUrlTransform())
                 .Include("~/Content/Components/loader.css", new CssRewriteUrlTransform())
                 .Include("~/Content/Components/image-overlay.css", new CssRewriteUrlTransform())
+                .Include("~/Content/Components/dropdown-navbar.css", new CssRewriteUrlTransform())
             );
             #endregion Scripts
         }

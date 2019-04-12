@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = MVC.Shared.Views.Layout._PanelLayout;
+}
+
+@section title{
+    <i class="@CssClass.FontAwesome.Configuration"></i> Test
+}
+
+@Html.ActionLink("Identicon", MVC.Test.Identicon(), new { @class = "btn btn-primary" })
+@Html.ActionLink("LoadingScreen", MVC.Test.LoadingScreen(), new { @class = "btn btn-primary" })

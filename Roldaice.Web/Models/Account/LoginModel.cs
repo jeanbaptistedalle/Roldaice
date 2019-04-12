@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
-namespace Roldaice.Web.Models.Authentication
+namespace Roldaice.Web.Models.Account
 {
     public class LoginModel
     {

@@ -15,7 +15,8 @@ namespace Roldaice.Web.Constants
         public const string Select = "js-select-picker";
         public const string DataToggle = "js-datatoggle";
         public const string Identicon = "js-identicon";
-        
+
+        public const string AppIcon = "app-icon";
 
 
         public class FontAwesome
@@ -29,6 +30,8 @@ namespace Roldaice.Web.Constants
             public const string User = BaseFixedWidth + "id-badge";
             public const string Login = BaseFixedWidth + "sign-in";
             public const string Logout = BaseFixedWidth + "sign-out";
+            public const string SeePassword = BaseFixedWidth + "eye-slash";
+            
         }
     }
 }

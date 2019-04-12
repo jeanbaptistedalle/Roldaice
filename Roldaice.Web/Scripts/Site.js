@@ -358,12 +358,11 @@ function prepareIdenticon() {
         if (hash) {
             var size = element.data('size');
             if (!size) {
-                size = 420;
+                size = 50;
             }
 
             var data = new Identicon(hash, size).toString();
-            element.attr('width', size);
-            element.attr('height', size);
+            element.attr('style', "height: " + size + "px !important; width:" + size + "px !important;");
             element.attr('src', 'data:image/png;base64,' + data);
         }
     });

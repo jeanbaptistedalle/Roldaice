@@ -75,6 +75,7 @@ namespace Roldaice.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string Index = "Index";
             public readonly string LoadingScreen = "LoadingScreen";
             public readonly string Identicon = "Identicon";
             public readonly string RedirectToHome = "RedirectToHome";
@@ -83,6 +84,7 @@ namespace Roldaice.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string Index = "Index";
             public const string LoadingScreen = "LoadingScreen";
             public const string Identicon = "Identicon";
             public const string RedirectToHome = "RedirectToHome";
@@ -108,9 +110,11 @@ namespace Roldaice.Web.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Identicon = "Identicon";
+                public readonly string Index = "Index";
                 public readonly string LoadingScreen = "LoadingScreen";
             }
             public readonly string Identicon = "~/Views/Test/Identicon.cshtml";
+            public readonly string Index = "~/Views/Test/Index.cshtml";
             public readonly string LoadingScreen = "~/Views/Test/LoadingScreen.cshtml";
             static readonly _PartialClass s_Partial = new _PartialClass();
             public _PartialClass Partial { get { return s_Partial; } }
@@ -130,6 +134,17 @@ namespace Roldaice.Web.Controllers
     public partial class T4MVC_TestController : Roldaice.Web.Controllers.TestController
     {
         public T4MVC_TestController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ViewResult Index()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Index);
+            IndexOverride(callInfo);
+            return callInfo;
+        }
 
         [NonAction]
         partial void LoadingScreenOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);

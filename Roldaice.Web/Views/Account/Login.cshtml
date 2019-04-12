@@ -1,4 +1,4 @@
-﻿@model Roldaice.Web.Models.Authentication.LoginModel
+﻿@model Roldaice.Web.Models.Account.LoginModel
 @{
     ViewBag.Title = "Authentification";
     Layout = MVC.Shared.Views.Layout._MiniPanelLayout;
@@ -8,7 +8,11 @@
     <i class="@CssClass.FontAwesome.User"></i> Connexion
 }
 
-@using (Html.BeginForm(MVC.Authentication.Login(), FormMethod.Post, new { @class = "form-horizontal" }))
+@section scripts{
+    @MvcHelper.RenderScriptWithVersion("~/Bundles/Account/Login")
+}
+
+@using (Html.BeginForm(MVC.Account.Login(), FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.ValidationSummary()
 
@@ -28,7 +32,12 @@
             @Html.LabelFor(m => m.Password, new { @class = "control-label" })
         </div>
         <div class="col-xs-12">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            <div class="input-group">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                <a href="#" id="show-password-btn" class="input-group-addon" data-target="#@Html.IdFor(m=>m.Password)" data-toggle="tooltip" title="Voir le mot de passe">
+                    <i class="@CssClass.FontAwesome.SeePassword"></i>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -37,7 +46,7 @@
             @Html.LabelFor(m => m.IsPersistent, new { @class = "control-label" })
         </div>
         <div class="col-xs-12">
-            @Html.CheckBoxFor(m => m.IsPersistent, new { @class = "form-control " + CssClass.DataToggle })
+            @Html.EditorFor(m => m.IsPersistent)
         </div>
     </div>
 

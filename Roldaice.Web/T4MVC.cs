@@ -27,7 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
-    public static Roldaice.Web.Controllers.AuthenticationController Authentication = new Roldaice.Web.Controllers.T4MVC_AuthenticationController();
+    public static Roldaice.Web.Controllers.AccountController Account = new Roldaice.Web.Controllers.T4MVC_AccountController();
     public static Roldaice.Web.Controllers.CryptographController Cryptograph = new Roldaice.Web.Controllers.T4MVC_CryptographController();
     public static Roldaice.Web.Controllers.ErrorController Error = new Roldaice.Web.Controllers.T4MVC_ErrorController();
     public static Roldaice.Web.Controllers.HomeController Home = new Roldaice.Web.Controllers.T4MVC_HomeController();
@@ -90,6 +90,14 @@ namespace Links
         public const string UrlPath = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Account {
+            public const string UrlPath = "~/Scripts/Account";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string Login_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Login.min.js") ? Url("Login.min.js") : Url("Login.js");
+        }
+    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Dependency {
             public const string UrlPath = "~/Scripts/Dependency";
@@ -165,6 +173,13 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class Account 
+            {
+                public static class Assets
+                {
+                    public static readonly string Login_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/Account/Login.js"); 
+                }
+            }
             public static partial class Dependency 
             {
                 public static class Assets
