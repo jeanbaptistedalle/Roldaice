@@ -2,67 +2,22 @@
     var authenticated = User.Identity.IsAuthenticated;
 }
 
-@*<ul class="nav navbar-nav navbar-left">
-        <li>@Html.ActionLink("Roldaice", MVC.Home.Index(), new { @class = "navbar-brand" })</li>
-        @if (authenticated)
-        {
-            <li>
-                <div class="image-overlay">
-                    <img class="@CssClass.Identicon image" data-hash="@User.Identity.GetIdenticonHash()" data-size="50" data-toggle="tooltip" title="Changer mon avatar" />
-                    <div class="overlay">
-                        <a href="@Url.Action(MVC.Account.EditAccountSettings())">
-                            <i class="@CssClass.FontAwesome.Configuration"></i>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <p class="navbar-text">
-                    @User.Identity.Name
-                </p>
-            </li>
-        }
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Menu <i class="caret"></i></a>
-            <ul id="menu" class="dropdown-menu last-level collapse">
-                <li>@Html.ActionLink("RollDice", MVC.RollDice.RollADice())</li>
-                <li>@Html.ActionLink("Enigma", MVC.Cryptograph.Enigma())</li>
-                <li class="divider"></li>
-                <li>@Html.ActionLink("Test", MVC.Test.Index())</li>
-                <li class="divider"></li>
-                <li>
-                    @if (authenticated)
-                    {
-                        @Html.ActionLinkIcon("Déconnexion", MVC.Account.Logout(), CssClass.FontAwesome.Logout)
-                    }
-                    else
-                    {
-                        @Html.ActionLinkIcon("Connexion", MVC.Account.Login(), CssClass.FontAwesome.Login)
-                    }
-                </li>
-            </ul>
-        </li>
-    </ul>*@
-
 <div class="nav navbar-nav">
     @Html.ActionLink("Roldaice", MVC.Home.Index(), new { @class = "navbar-brand" })
+    <a href="" class="navbar-link navbar-right" data-toggle="modal" data-target="#@CssId.AppList">
+        <i class="fa fa-th"></i>
+    </a>
     @if (authenticated)
     {
-        <div class="navbar-link no-padding">
+        <div class="navbar-link no-padding no-margin-horizontal navbar-right">
             <div class="image-overlay">
                 <img class="@CssClass.Identicon image" data-hash="@User.Identity.GetIdenticonHash()" data-size="50" data-toggle="tooltip" title="Changer mon avatar" />
                 <div class="overlay">
                     <a href="@Url.Action(MVC.Account.EditAccountSettings())">
-                        <i class="@CssClass.FontAwesome.Configuration"></i>
+                        <i class="@CssClass.FontAwesome.Profile"></i>
                     </a>
                 </div>
             </div>
         </div>
     }
-    <a href="" class="navbar-link navbar-right" data-toggle="modal" data-target="#@CssId.AppList">
-        <i class="fa fa-th"></i>
-    </a>
 </div>

@@ -192,11 +192,13 @@
     <Compile Include="Constants\CssClass.cs" />
     <Compile Include="Constants\CssId.cs" />
     <Compile Include="Constants\FrontAppSettingsKey.cs" />
+    <Compile Include="Constants\HtmlConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\CryptographController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JdrController.cs" />
     <Compile Include="Controllers\RollDiceController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="CryptographController.generated.cs">
@@ -211,8 +213,12 @@
     <Compile Include="Helpers\AppSettingsHelper.cs" />
     <Compile Include="Helpers\HandleErrorInfoLogged.cs" />
     <Compile Include="Helpers\MvcHelper.cs" />
+    <Compile Include="Helpers\MVCComponentHelper.cs" />
     <Compile Include="Helpers\SelectListItemHelper.cs" />
     <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JdrController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\LoginModel.cs" />
@@ -239,6 +245,7 @@
     <Content Include="Content\bootstrap-extension.css" />
     <Content Include="Content\Components\image-overlay.css" />
     <Content Include="Content\Components\loader.css" />
+    <Content Include="Content\Components\strobe.css" />
     <Content Include="Content\Dependency\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\Dependency\bootstrap-select.min.css" />
     <Content Include="Content\Dependency\bootstrap-slider.min.css" />
@@ -340,6 +347,8 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Shared\Layout\Partial\_AppList.cshtml" />
+    <Content Include="Views\Jdr\CopsBiMaster.cshtml" />
+    <Content Include="Views\Shared\Partial\_Strobe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

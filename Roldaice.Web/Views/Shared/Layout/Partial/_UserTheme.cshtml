@@ -1,10 +1,46 @@
 ﻿@{
-    var color = User.Identity.GetIdenticonHash();
+    var color1 = User.Identity.GetUserThemeColor();
+    //TODO Ajouter autres couleur
+    var color2 = color1;
+    var fontColor1 = "white";
+    var fontColor2 = fontColor1;
 }
 <style type="text/css">
-
     .navbar-inverse {
-        /*background-color: lightgray;
-        background-image: none;*/
+        background-image: -webkit-linear-gradient(top,@color1 0,@color2 100%);
+        background-image: -o-linear-gradient(top,@color1 0,@color2 100%);
+        background-image: -webkit-gradient(linear,left top,left bottom,from(@color1),to(@color2));
+        background-image: linear-gradient(to bottom,@color1 0,@color2 100%);
+    }
+
+    .panel-theme > .panel-heading {
+        color: @fontColor1;
+        background-color: @color1;
+        background-image: -webkit-linear-gradient(top,@color1 0,@color2 100%);
+        background-image: -o-linear-gradient(top,@color1 0,@color2 100%);
+        background-image: -webkit-gradient(linear,left top,left bottom,from(@color1),to(@color2));
+        background-image: linear-gradient(to bottom,@color1 0,@color2 100%);
+    }
+
+    .panel-theme {
+        border-color: @color1;
+    }
+
+    .fa-theme {
+        color: @color1;
+    }
+
+    .btn-theme {
+        color: @fontColor1;
+        background-image: -webkit-linear-gradient(top,@color1 0,@color2 100%);
+        background-image: -o-linear-gradient(top,@color1 0,@color2 100%);
+        background-image: -webkit-gradient(linear,left top,left bottom,from(@color1),to(@color2));
+        background-image: linear-gradient(to bottom,@color1 0,@color2 100%);
+        border-color: @color1;
+    }
+
+    .btn.btn-theme.focus, .btn.btn-theme:focus, .btn.btn-theme:hover {
+        color: @fontColor2;
+        text-decoration: none;
     }
 </style>

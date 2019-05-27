@@ -16,5 +16,20 @@ namespace Roldaice.Helpers.Extensions
             var claimsIdentity = (identity as ClaimsIdentity);
             return claimsIdentity.Claims.SingleOrDefault(c => c.Type == CustomClaimTypes.IdenticonHash)?.Value;
         }
+
+        public static string GetUserThemeColor(this IIdentity identity)
+        {
+            var color = "black";
+            if (identity.IsAuthenticated)
+            {
+                var claimsIdentity = (identity as ClaimsIdentity);
+                var userThemeColor = claimsIdentity.Claims.SingleOrDefault(c => c.Type == CustomClaimTypes.UserThemeColor)?.Value;
+                if (!String.IsNullOrEmpty(userThemeColor))
+                {
+                    color = userThemeColor;
+                }
+            }
+            return color;
+        }
     }
 }

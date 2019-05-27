@@ -23,15 +23,23 @@ namespace Roldaice.Web.Constants
         {
             public const string Base = "fa fa-";
             public const string BaseFixedWidth = "fa-fw " + Base;
+            public const string BaseBigIcon = "fa-3x " + BaseFixedWidth;
 
             public const string Configuration = BaseFixedWidth + "cogs";
+            public const string Profile = BaseFixedWidth + "user-circle";
             public const string Submit = BaseFixedWidth + "check";
 
             public const string User = BaseFixedWidth + "id-badge";
             public const string Login = BaseFixedWidth + "sign-in";
             public const string Logout = BaseFixedWidth + "sign-out";
             public const string SeePassword = BaseFixedWidth + "eye-slash";
-            
+
+            public const string RollDiceAppIcon = BaseBigIcon + "cog";
+            public const string EnigmaAppIcon = BaseBigIcon + "lock";
+            public const string TestAppIcon = BaseBigIcon + "flask";
+            public const string ProfileAppIcon = BaseBigIcon + "user-circle";
+            public const string LoginAppIcon = BaseBigIcon + "sign-in";
+            public const string LogoutAppIcon = BaseBigIcon + "sign-out";
         }
     }
 }

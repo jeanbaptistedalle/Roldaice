@@ -1,0 +1,14 @@
+﻿@model System.String
+
+
+@Styles.Render("~/Bundles/Site/Strobe/Css")
+
+<div class="glitch" data-text="@Model">
+
+    <span class="glitch__color glitch__color--red">@Model</span>
+    <span class="glitch__color glitch__color--blue">@Model</span>
+    <span class="glitch__color glitch__color--green">@Model</span>
+    <span class="glitch__main">@Model</span>
+    <span class="glitch__line glitch__line--first"></span>
+    <span class="glitch__line glitch__line--second"></span>
+</div>

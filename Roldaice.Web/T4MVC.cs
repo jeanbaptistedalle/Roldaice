@@ -31,6 +31,7 @@ public static partial class MVC
     public static Roldaice.Web.Controllers.CryptographController Cryptograph = new Roldaice.Web.Controllers.T4MVC_CryptographController();
     public static Roldaice.Web.Controllers.ErrorController Error = new Roldaice.Web.Controllers.T4MVC_ErrorController();
     public static Roldaice.Web.Controllers.HomeController Home = new Roldaice.Web.Controllers.T4MVC_HomeController();
+    public static Roldaice.Web.Controllers.JdrController Jdr = new Roldaice.Web.Controllers.T4MVC_JdrController();
     public static Roldaice.Web.Controllers.RollDiceController RollDice = new Roldaice.Web.Controllers.T4MVC_RollDiceController();
     public static Roldaice.Web.Controllers.TestController Test = new Roldaice.Web.Controllers.T4MVC_TestController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -136,6 +137,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string image_overlay_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/image-overlay.min.css") ? Url("image-overlay.min.css") : Url("image-overlay.css");
             public static readonly string loader_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/loader.min.css") ? Url("loader.min.css") : Url("loader.css");
+            public static readonly string strobe_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/strobe.min.css") ? Url("strobe.min.css") : Url("strobe.css");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -162,6 +164,13 @@ namespace Links
             public static readonly string fontawesome_webfont_woff = Url("fontawesome-webfont.woff");
             public static readonly string fontawesome_webfont_woff2 = Url("fontawesome-webfont.woff2");
             public static readonly string FontAwesome_otf = Url("FontAwesome.otf");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Images {
+            public const string UrlPath = "~/Content/Images";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
         }
     
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
@@ -214,6 +223,7 @@ namespace Links
                 {
                     public static readonly string image_overlay_css = T4MVCHelpers.ProcessAssetPath("~/Content/Components/image-overlay.css");
                     public static readonly string loader_css = T4MVCHelpers.ProcessAssetPath("~/Content/Components/loader.css");
+                    public static readonly string strobe_css = T4MVCHelpers.ProcessAssetPath("~/Content/Components/strobe.css");
                 }
             }
             public static partial class Dependency 
@@ -231,6 +241,12 @@ namespace Links
                 }
             }
             public static partial class Fonts 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Images 
             {
                 public static class Assets
                 {

@@ -9,6 +9,6 @@ namespace Roldaice.Helpers.Constants
     public class CustomClaimTypes
     {
         public const string IdenticonHash = "IdenticonHash";
-        public const string NavbarBackgroundColor = "NavbarBackgroundColor";
+        public const string UserThemeColor = "UserThemeColor";
     }
 }

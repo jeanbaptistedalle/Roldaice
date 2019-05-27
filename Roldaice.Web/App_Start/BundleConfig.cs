@@ -50,13 +50,16 @@ namespace Roldaice.Web
                 .Include("~/Content/Dependency/datatables.min.css", new CssRewriteUrlTransform())
                 .Include("~/Content/Dependency/font-awesome.min.css", new CssRewriteUrlTransform())
             );
-            
+
             bundles.Add(new StyleBundle("~/Bundles/Site/Css")
                 .Include("~/Content/Site.css", new CssRewriteUrlTransform())
                 .Include("~/Content/bootstrap-extension.css", new CssRewriteUrlTransform())
                 .Include("~/Content/Components/loader.css", new CssRewriteUrlTransform())
                 .Include("~/Content/Components/image-overlay.css", new CssRewriteUrlTransform())
-                .Include("~/Content/Components/dropdown-navbar.css", new CssRewriteUrlTransform())
+            );
+
+            bundles.Add(new StyleBundle("~/Bundles/Site/Strobe/Css")
+                .Include("~/Content/Components/strobe.css", new CssRewriteUrlTransform())
             );
             #endregion Scripts
         }

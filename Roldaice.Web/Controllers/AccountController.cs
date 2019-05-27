@@ -45,7 +45,7 @@ namespace Roldaice.Web.Controllers
 
                     var seed = String.IsNullOrEmpty(user?.UserCustomization?.IdenticonSeed) ? user.Login : user?.UserCustomization?.IdenticonSeed;
                     identity.AddClaim(new Claim(CustomClaimTypes.IdenticonHash, seed.ToSHA256()));
-                    identity.AddClaim(new Claim(CustomClaimTypes.NavbarBackgroundColor, user?.UserCustomization?.NavbarBackgroundColor ?? String.Empty));
+                    identity.AddClaim(new Claim(CustomClaimTypes.UserThemeColor, user?.UserCustomization?.NavbarBackgroundColor ?? String.Empty));
 
                     AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = model.IsPersistent }, identity);
 

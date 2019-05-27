@@ -113,8 +113,10 @@ namespace T4MVC
                 public class _ViewNamesClass
                 {
                     public readonly string _EmptyView = "_EmptyView";
+                    public readonly string _Strobe = "_Strobe";
                 }
                 public readonly string _EmptyView = "~/Views/Shared/Partial/_EmptyView.cshtml";
+                public readonly string _Strobe = "~/Views/Shared/Partial/_Strobe.cshtml";
             }
             static readonly _PartialLayoutClass s_PartialLayout = new _PartialLayoutClass();
             public _PartialLayoutClass PartialLayout { get { return s_PartialLayout; } }

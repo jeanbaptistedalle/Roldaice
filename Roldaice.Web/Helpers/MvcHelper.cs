@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roldaice.Web.Constants;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -9,6 +10,9 @@ using System.Web.Routing;
 
 namespace Roldaice.Web.Helpers
 {
+    /// <summary>
+    /// Contains extension methods for MVC
+    /// </summary>
     public static class MvcHelper
     {
         public static RouteValueDictionary Attributes(this HtmlHelper html, object htmlAttributes, bool readOnly = false, bool disabled = false)
@@ -59,13 +63,12 @@ namespace Roldaice.Web.Helpers
 
         public static MvcHtmlString ActionLinkIcon(this HtmlHelper html, string linkText, ActionResult result, string htmlIconAttributes, object htmlAttributes)
         {
-            var replaceMe = "replace_me";
-            var iBuilder = new TagBuilder("i");
+            var iBuilder = new TagBuilder(HtmlConstants.ITag);
             iBuilder.MergeAttributes(new RouteValueDictionary(new { @class = htmlIconAttributes }));
             string iHtml = iBuilder.ToString(TagRenderMode.Normal);
             var preparedLinkText = $"{iHtml} {linkText}";
-            var link = html.ActionLink(replaceMe, result, htmlAttributes);
-            return MvcHtmlString.Create(link.ToString().Replace(replaceMe, preparedLinkText));
+            var link = html.ActionLink(HtmlConstants.ReplaceMe, result, htmlAttributes);
+            return MvcHtmlString.Create(link.ToString().Replace(HtmlConstants.ReplaceMe, preparedLinkText));
         }
     }
 }
